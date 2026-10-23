@@ -1,0 +1,561 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#081629">
+<meta name="description" content="TBT Construction — Construction de bâtiments, travaux publics et génie civil à Tombouctou, Mali. Contactez notre équipe pour vos projets.">
+<title>TBT CONSTRUCTION | Bâtir l'avenir</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy:#081629;
+  --navy2:#102541;
+  --gold:#d6ad65;
+  --gold-light:#f0d6a2;
+  --white:#ffffff;
+  --muted:#667085;
+  --light:#f4f6f9;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{font-family:'DM Sans',sans-serif;color:#182436;background:white;line-height:1.7}
+a{text-decoration:none;color:inherit}
+button,input,textarea,select{font:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1160px,90%);margin:auto}
+h1,h2,h3,.brand{font-family:'Montserrat',sans-serif}
+h2{font-size:clamp(28px,4vw,43px);line-height:1.2;color:var(--navy);letter-spacing:-1.2px}
+.section{padding:95px 0}
+.section-label{color:#a67b36;font-size:12px;font-weight:800;letter-spacing:3px;text-transform:uppercase;margin-bottom:14px}
+.section-heading{max-width:690px;margin-bottom:48px}
+.section-heading p{color:var(--muted);margin-top:17px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;font-weight:700;font-size:14px;border-radius:3px;transition:.25s;border:1px solid transparent;cursor:pointer}
+.btn-gold{background:var(--gold);color:var(--navy)}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px)}
+.btn-outline{border-color:rgba(255,255,255,.6);color:white}
+.btn-outline:hover{background:white;color:var(--navy)}
+/* TOP BAR */
+.topbar{background:#050e1b;color:#dce3ed;font-size:12px;padding:9px 0}
+.topbar-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.topbar a:hover{color:var(--gold)}
+/* NAVIGATION */
+header{background:var(--navy);color:white;position:sticky;top:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px;letter-spacing:1px}
+.brand-mark{height:45px;width:45px;border:2px solid var(--gold);display:grid;place-items:center;color:var(--gold);font-size:16px;font-weight:800}
+.brand small{display:block;font-family:'DM Sans',sans-serif;font-size:9px;letter-spacing:3px;font-weight:500;color:#b6c1d0}
+.nav-links{display:flex;align-items:center;gap:27px;font-size:13px;font-weight:600}
+.nav-links a:hover{color:var(--gold)}
+.nav-links .nav-cta{background:var(--gold);color:var(--navy);padding:12px 17px}
+.menu-btn{display:none;background:none;border:1px solid #536176;color:white;padding:8px 12px;font-size:22px}
+/* HERO */
+.hero{position:relative;min-height:650px;display:flex;align-items:center;color:white;background:#102541;overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,15,29,.96) 0%,rgba(5,15,29,.82) 47%,rgba(5,15,29,.25) 100%)}
+.hero-content{position:relative;z-index:1;padding:105px 0;max-width:780px}
+.hero-tag{display:flex;align-items:center;gap:12px;color:var(--gold-light);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:25px}
+.hero-tag:before{content:"";height:2px;width:35px;background:var(--gold)}
+.hero h1{font-size:clamp(38px,6vw,70px);line-height:1.08;letter-spacing:-2px;margin-bottom:25px}
+.hero h1 span{color:var(--gold)}
+.hero-content>p{font-size:17px;color:#d6deea;max-width:590px;margin-bottom:34px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.hero-bottom{display:flex;gap:32px;flex-wrap:wrap;margin-top:60px;padding-top:23px;border-top:1px solid rgba(255,255,255,.25);max-width:630px}
+.hero-point{font-size:12px;color:#d8e0eb;display:flex;align-items:center;gap:9px}
+.hero-point span{color:var(--gold);font-size:18px}
+/* INTRO */
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}
+.intro-image{position:relative;padding:0 25px 25px 0}
+.intro-image img{width:100%;height:470px;object-fit:cover}
+.image-accent{position:absolute;bottom:0;right:0;width:55%;height:60%;border-right:7px solid var(--gold);border-bottom:7px solid var(--gold);z-index:-1}
+.intro-copy p{color:var(--muted);margin-top:19px}
+.intro-list{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:28px 0}
+.intro-list div{font-size:13px;font-weight:700;display:flex;gap:10px;align-items:flex-start}
+.check{color:#a67b36;font-weight:900;font-size:18px}
+/* SERVICES */
+.services{background:var(--light)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.service-card{background:white;border:1px solid #e7ebf0;transition:.3s;overflow:hidden}
+.service-card:hover{transform:translateY(-7px);box-shadow:0 18px 45px rgba(8,22,41,.1)}
+.service-img{height:215px;overflow:hidden}
+.service-img img{height:100%;width:100%;object-fit:cover;transition:.5s}
+.service-card:hover .service-img img{transform:scale(1.06)}
+.service-body{padding:27px}
+.service-number{color:#bd914d;font-size:12px;letter-spacing:2px;font-weight:800}
+.service-body h3{font-size:19px;color:var(--navy);margin:10px 0}
+.service-body p{font-size:14px;color:var(--muted)}
+.service-link{display:inline-block;color:#9b712f;font-size:13px;font-weight:800;margin-top:19px}
+/* APPROACH */
+.approach{background:var(--navy);color:white}
+.approach h2{color:white}
+.approach .section-heading p{color:#c2cbd8}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
+.step{border-top:1px solid #45536a;padding-top:24px}
+.step-num{font-family:'Montserrat',sans-serif;color:var(--gold);font-size:35px;font-weight:700}
+.step h3{font-size:16px;margin:12px 0}
+.step p{font-size:13px;color:#c2cbd8}
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:220px 220px;gap:15px}
+.gallery-item{position:relative;overflow:hidden;background:#e7ebf0}
+.gallery-item:first-child{grid-row:span 2}
+.gallery-item img{height:100%;width:100%;object-fit:cover;transition:.4s}
+.gallery-item:hover img{transform:scale(1.05)}
+.gallery-caption{position:absolute;bottom:0;left:0;right:0;padding:35px 18px 17px;background:linear-gradient(transparent,rgba(5,15,29,.88));color:white;font-size:14px;font-weight:700}
+/* CTA */
+.cta-band{background:var(--gold);padding:55px 0}
+.cta-inner{display:flex;align-items:center;justify-content:space-between;gap:25px;flex-wrap:wrap}
+.cta-band h2{font-size:clamp(25px,3vw,36px);color:var(--navy)}
+.cta-band p{color:#29384a;margin-top:8px}
+/* CONTACT */
+.contact{background:#f5f7fa}
+.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;align-items:start}
+.contact-info{background:var(--navy);color:white;padding:35px}
+.contact-info h3{font-size:24px;margin-bottom:12px}
+.contact-info>p{color:#c4cfdd;font-size:14px;margin-bottom:28px}
+.contact-line{display:flex;gap:14px;margin:22px 0;align-items:flex-start}
+.contact-icon{color:var(--gold);font-size:20px}
+.contact-line small{display:block;color:#aebdce;font-size:11px;text-transform:uppercase;letter-spacing:1px}
+.contact-line a,.contact-line span{font-size:14px;overflow-wrap:anywhere}
+.contact-form{background:white;padding:35px;box-shadow:0 12px 40px rgba(8,22,41,.05)}
+.contact-form h3{font-size:23px;color:var(--navy);margin-bottom:7px}
+.contact-form>p{font-size:13px;color:var(--muted);margin-bottom:25px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:12px;font-weight:700;color:#28384c}
+.field input,.field select,.field textarea{border:1px solid #dbe1e8;padding:13px;background:#fff;outline:none;border-radius:2px;width:100%;color:#182436}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:#bd914d}
+.field textarea{resize:vertical;min-height:115px}
+.contact-form .btn{width:100%;margin-top:20px}
+.form-note{font-size:11px;color:#7c8796;margin-top:12px}
+/* FOOTER */
+footer{background:#050e1b;color:white;padding:50px 0 20px}
+.footer-grid{display:grid;grid-template-columns:1.2fr .8fr 1fr;gap:40px;padding-bottom:35px}
+.footer-about p{color:#b6c1d0;font-size:13px;margin-top:17px;max-width:340px}
+footer h3{font-size:14px;margin-bottom:17px;color:var(--gold)}
+.footer-links{display:grid;gap:10px;font-size:13px;color:#c3ccda}
+.footer-links a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid #283449;padding-top:20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:11px;color:#9eabba}
+.whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:999;background:#1fbd65;color:white;border-radius:50px;padding:14px 18px;font-size:13px;font-weight:800;box-shadow:0 7px 25px #0003}
+.whatsapp-float:hover{background:#149d51}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:900px){
+ .nav-links{gap:14px;font-size:12px}
+ .nav-links .nav-cta{padding:10px}
+ .intro-grid{gap:35px}
+ .services-grid{grid-template-columns:repeat(2,1fr)}
+ .steps{grid-template-columns:repeat(2,1fr);row-gap:35px}
+ .contact-grid{gap:25px}
+}
+@media(max-width:700px){
+ .topbar-inner{justify-content:center;text-align:center}
+ .nav{height:72px}
+ .brand{font-size:16px}
+ .brand-mark{height:39px;width:39px}
+ .menu-btn{display:block}
+ .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:var(--navy);padding:22px 5%;flex-direction:column;align-items:stretch;gap:0;border-top:1px solid #25344a}
+ .nav-links.open{display:flex}
+ .nav-links a{padding:13px 0;border-bottom:1px solid #25344a;font-size:14px}
+ .nav-links .nav-cta{margin-top:12px;text-align:center;padding:13px}
+ .hero{min-height:610px}
+ .hero-content{padding:80px 0}
+ .hero h1{letter-spacing:-1px}
+ .hero-content>p{font-size:15px}
+ .hero-bottom{gap:14px;margin-top:42px}
+ .section{padding:70px 0}
+ .intro-grid,.contact-grid{grid-template-columns:1fr}
+ .intro-image img{height:330px}
+ .intro-copy{order:-1}
+ .services-grid{grid-template-columns:1fr}
+ .service-img{height:230px}
+ .steps{grid-template-columns:1fr 1fr;gap:25px 17px}
+ .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:220px 160px 160px}
+ .gallery-item:first-child{grid-row:span 2}
+ .gallery-item:last-child{grid-column:1/-1}
+ .cta-inner{align-items:flex-start}
+ .contact-info,.contact-form{padding:25px}
+ .form-grid{grid-template-columns:1fr}
+ .field.full{grid-column:auto}
+ .footer-grid{grid-template-columns:1fr;gap:28px}
+ .footer-bottom{flex-direction:column}
+ .whatsapp-float{right:12px;bottom:12px;padding:12px 15px}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation:none!important;transition:none!important}
+ .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <span>📍 Tombouctou, Mali</span>
+    <a href="mailto:tbtconstruction@gmail.com">✉ tbtconstruction@gmail.com</a>
+    <a href="tel:+22372925382">☎ +223 72 92 53 82</a>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#accueil" class="brand" aria-label="TBT Construction accueil">
+      <span class="brand-mark">TBT</span>
+      <span>TBT CONSTRUCTION<small>BÂTIR AVEC VISION</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a href="#accueil">Accueil</a>
+      <a href="#entreprise">L'entreprise</a>
+      <a href="#services">Services</a>
+      <a href="#realisations">Galerie</a>
+      <a href="#contact" class="nav-cta">Demander un devis ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="accueil">
+  <img class="hero-bg" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=85" alt="Architecture moderne et bâtiments contemporains">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-tag">Construction · Travaux publics · Génie civil</div>
+      <h1>Construire aujourd'hui.<br><span>Préparer demain.</span></h1>
+      <p>TBT CONSTRUCTION accompagne vos projets de construction et d'aménagement avec une approche axée sur la qualité, la rigueur et une vision durable du bâti.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-gold">Parlons de votre projet ↗</a>
+        <a href="#services" class="btn btn-outline">Découvrir nos services</a>
+      </div>
+      <div class="hero-bottom">
+        <div class="hero-point"><span>◆</span> Construction de bâtiments</div>
+        <div class="hero-point"><span>◆</span> Travaux publics</div>
+        <div class="hero-point"><span>◆</span> Génie civil</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="entreprise">
+  <div class="container intro-grid">
+    <div class="intro-image reveal">
+      <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1000&q=85" alt="Travaux de construction et structure d'un bâtiment" loading="lazy">
+      <div class="image-accent"></div>
+    </div>
+    <div class="intro-copy reveal">
+      <div class="section-label">Notre entreprise</div>
+      <h2>Des idées solides.<br>Des projets bien pensés.</h2>
+      <p>TBT CONSTRUCTION, également désignée sous le nom de TOMBOUCTOU CONSTRUCTION, intervient dans les domaines du bâtiment, des travaux publics et du génie civil.</p>
+      <p>Chaque projet mérite une écoute attentive, une préparation sérieuse et une organisation adaptée à ses objectifs. Notre démarche vise à accompagner les clients de la définition de leurs besoins jusqu'aux étapes de réalisation convenues.</p>
+      <div class="intro-list">
+        <div><span class="check">✓</span><span>Écoute des besoins</span></div>
+        <div><span class="check">✓</span><span>Préparation du projet</span></div>
+        <div><span class="check">✓</span><span>Suivi des étapes</span></div>
+        <div><span class="check">✓</span><span>Communication claire</span></div>
+      </div>
+      <a href="#contact" class="btn btn-gold">Contacter notre équipe ↗</a>
+    </div>
+  </div>
+</section>
+
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-heading reveal">
+      <div class="section-label">Nos domaines d'activité</div>
+      <h2>Des services adaptés à vos ambitions.</h2>
+      <p>Découvrez nos principaux domaines d'intervention et contactez-nous pour discuter des besoins spécifiques de votre projet.</p>
+    </div>
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="Architecture résidentielle contemporaine" loading="lazy">
+        </div>
+        <div class="service-body">
+          <div class="service-number">01 / BÂTIMENT</div>
+          <h3>Construction de bâtiments</h3>
+          <p>Étude de vos besoins pour vos projets de bâtiments résidentiels, professionnels et autres ouvrages, selon le cahier des charges défini.</p>
+          <a href="#contact" class="service-link">Parler de votre projet ↗</a>
+        </div>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1517089596392-fb9a9033e05b?auto=format&fit=crop&w=900&q=80" alt="Infrastructure urbaine et aménagement" loading="lazy">
+        </div>
+        <div class="service-body">
+          <div class="service-number">02 / INFRASTRUCTURE</div>
+          <h3>Travaux publics</h3>
+          <p>Accompagnement des besoins en infrastructures et aménagements, avec une attention portée à la planification et aux exigences du projet.</p>
+          <a href="#contact" class="service-link">Parler de votre projet ↗</a>
+        </div>
+      </article>
+      <article class="service-card reveal">
+        <div class="service-img">
+          <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80" alt="Équipe et matériel sur un chantier" loading="lazy">
+        </div>
+        <div class="service-body">
+          <div class="service-number">03 / INGÉNIERIE</div>
+          <h3>Génie civil</h3>
+          <p>Prise en compte des enjeux techniques, de la coordination et des contraintes propres aux ouvrages et projets de génie civil.</p>
+          <a href="#contact" class="service-link">Parler de votre projet ↗</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section approach">
+  <div class="container">
+    <div class="section-heading reveal">
+      <div class="section-label">Notre démarche</div>
+      <h2>Une méthode claire à chaque étape.</h2>
+      <p>Une bonne préparation permet de mieux comprendre les attentes, d'anticiper les contraintes et de cadrer les prochaines étapes.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">01</div>
+        <h3>Écoute & échange</h3>
+        <p>Comprendre votre besoin, vos objectifs et les particularités du projet.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">02</div>
+        <h3>Analyse & préparation</h3>
+        <p>Définir le périmètre des travaux et les éléments nécessaires à leur préparation.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">03</div>
+        <h3>Proposition</h3>
+        <p>Discuter des options, des délais envisagés et du budget selon le projet.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">04</div>
+        <h3>Suivi & communication</h3>
+        <p>Clarifier les étapes retenues et maintenir les échanges pendant la mission convenue.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="realisations">
+  <div class="container">
+    <div class="section-heading reveal">
+      <div class="section-label">Architecture & construction</div>
+      <h2>L'univers de nos métiers.</h2>
+      <p>Des exemples visuels d'architecture, d'infrastructures et de construction pour illustrer nos domaines d'activité.</p>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&w=1000&q=80" alt="Architecture contemporaine" loading="lazy">
+        <div class="gallery-caption">Architecture & bâtiments</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" alt="Conception architecturale" loading="lazy">
+        <div class="gallery-caption">Conception & planification</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" alt="Structure de construction" loading="lazy">
+        <div class="gallery-caption">Structures & chantier</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=800&q=80" alt="Bâtiment et lignes architecturales" loading="lazy">
+        <div class="gallery-caption">Bâtiments modernes</div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1590644365607-1c5a38b4c9a4?auto=format&fit=crop&w=800&q=80" alt="Projet d'architecture" loading="lazy">
+        <div class="gallery-caption">Espaces & aménagements</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container cta-inner">
+    <div>
+      <h2>Vous avez un projet de construction ?</h2>
+      <p>Parlons de vos besoins et des prochaines étapes à envisager.</p>
+    </div>
+    <a href="#contact" class="btn" style="background:#081629;color:white">Demander un devis ↗</a>
+  </div>
+</section>
+
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="section-heading reveal">
+      <div class="section-label">Contact & devis</div>
+      <h2>Parlons de votre prochain projet.</h2>
+      <p>Décrivez votre besoin. Les informations seront préparées dans un message WhatsApp que vous pourrez vérifier et envoyer.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <h3>Entrons en contact.</h3>
+        <p>Pour toute demande d'information ou de devis, contactez directement TBT CONSTRUCTION.</p>
+        <div class="contact-line">
+          <span class="contact-icon">⌖</span>
+          <div><small>Adresse</small><span>Tombouctou, Mali</span></div>
+        </div>
+        <div class="contact-line">
+          <span class="contact-icon">☎</span>
+          <div><small>Téléphone / WhatsApp</small><a href="https://wa.me/22372925382" target="_blank" rel="noopener">+223 72 92 53 82</a></div>
+        </div>
+        <div class="contact-line">
+          <span class="contact-icon">✉</span>
+          <div><small>Email</small><a href="mailto:tbtconstruction@gmail.com">tbtconstruction@gmail.com</a></div>
+        </div>
+        <a href="https://wa.me/22372925382?text=Bonjour%20TBT%20CONSTRUCTION%2C%20je%20souhaite%20discuter%20d%27un%20projet." class="btn btn-gold" target="_blank" rel="noopener" style="margin-top:15px;width:100%">Écrire sur WhatsApp ↗</a>
+      </div>
+
+      <form class="contact-form reveal" id="quoteForm">
+        <h3>Demande de devis</h3>
+        <p>Complétez les champs ci-dessous pour préparer votre demande.</p>
+        <div class="form-grid">
+          <div class="field">
+            <label for="clientName">Nom complet *</label>
+            <input id="clientName" name="name" autocomplete="name" required placeholder="Votre nom">
+          </div>
+          <div class="field">
+            <label for="clientPhone">Votre téléphone *</label>
+            <input id="clientPhone" name="phone" type="tel" autocomplete="tel" required placeholder="+223 ...">
+          </div>
+          <div class="field full">
+            <label for="projectType">Type de projet *</label>
+            <select id="projectType" name="type" required>
+              <option value="">Sélectionnez un service</option>
+              <option>Construction de bâtiment</option>
+              <option>Travaux publics</option>
+              <option>Génie civil</option>
+              <option>Aménagement</option>
+              <option>Autre demande</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="projectCity">Ville / localisation</label>
+            <input id="projectCity" name="city" placeholder="Lieu du projet">
+          </div>
+          <div class="field">
+            <label for="projectBudget">Budget envisagé</label>
+            <select id="projectBudget" name="budget">
+              <option value="">À discuter</option>
+              <option>Moins de 1 000 000 FCFA</option>
+              <option>1 000 000 – 5 000 000 FCFA</option>
+              <option>5 000 000 – 20 000 000 FCFA</option>
+              <option>Plus de 20 000 000 FCFA</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label for="projectDetails">Description du projet *</label>
+            <textarea id="projectDetails" name="details" required placeholder="Expliquez votre besoin, les dimensions ou les travaux souhaités..."></textarea>
+          </div>
+        </div>
+        <button class="btn btn-gold" type="submit">Préparer ma demande sur WhatsApp ↗</button>
+        <p class="form-note">Le formulaire n'envoie pas automatiquement vos données. WhatsApp s'ouvrira avec votre message, que vous pourrez vérifier avant de l'envoyer.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a href="#accueil" class="brand">
+          <span class="brand-mark">TBT</span>
+          <span>TBT CONSTRUCTION<small>BÂTIR AVEC VISION</small></span>
+        </a>
+        <p>Construction de bâtiments, travaux publics et génie civil. Une approche structurée pour accompagner vos projets à Tombouctou et selon vos besoins.</p>
+      </div>
+      <div>
+        <h3>Navigation</h3>
+        <div class="footer-links">
+          <a href="#accueil">Accueil</a>
+          <a href="#entreprise">L'entreprise</a>
+          <a href="#services">Nos services</a>
+          <a href="#realisations">Galerie</a>
+          <a href="#contact">Contact & devis</a>
+        </div>
+      </div>
+      <div>
+        <h3>Coordonnées</h3>
+        <div class="footer-links">
+          <span>Tombouctou, Mali</span>
+          <a href="tel:+22372925382">+223 72 92 53 82</a>
+          <a href="mailto:tbtconstruction@gmail.com">tbtconstruction@gmail.com</a>
+          <a href="https://wa.me/22372925382" target="_blank" rel="noopener">Contacter sur WhatsApp ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> TBT CONSTRUCTION. Tous droits réservés.</span>
+      <span>Construction · Travaux publics · Génie civil</span>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-float" href="https://wa.me/22372925382?text=Bonjour%20TBT%20CONSTRUCTION%2C%20je%20souhaite%20obtenir%20des%20informations." target="_blank" rel="noopener" aria-label="Contacter TBT Construction sur WhatsApp">☏ WhatsApp</a>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', String(isOpen));
+  menuBtn.textContent = isOpen ? '✕' : '☰';
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.textContent = '☰';
+  });
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const revealItems = document.querySelectorAll('.reveal');
+
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealItems.forEach(item => observer.observe(item));
+} else {
+  revealItems.forEach(item => item.classList.add('visible'));
+}
+
+document.getElementById('quoteForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById('clientName').value.trim();
+  const phone = document.getElementById('clientPhone').value.trim();
+  const type = document.getElementById('projectType').value;
+  const city = document.getElementById('projectCity').value.trim() || 'Non précisée';
+  const budget = document.getElementById('projectBudget').value || 'À discuter';
+  const details = document.getElementById('projectDetails').value.trim();
+
+  const message =
+    'Bonjour TBT CONSTRUCTION, je souhaite demander un devis.%0A%0A' +
+    'Nom : ' + encodeURIComponent(name) + '%0A' +
+    'Téléphone : ' + encodeURIComponent(phone) + '%0A' +
+    'Type de projet : ' + encodeURIComponent(type) + '%0A' +
+    'Localisation : ' + encodeURIComponent(city) + '%0A' +
+    'Budget : ' + encodeURIComponent(budget) + '%0A' +
+    'Description : ' + encodeURIComponent(details);
+
+  window.open('https://wa.me/22372925382?text=' + message, '_blank', 'noopener');
+});
+</script>
+</body>
+</html>
